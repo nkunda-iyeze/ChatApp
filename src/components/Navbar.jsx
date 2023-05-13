@@ -1,6 +1,7 @@
 import React from 'react'
 import { auth } from '../firebase'
 import {useAuthState} from "react-firebase-hooks/auth"
+import Login from './Login';
 const Navbar = () => {
   const [user] = useAuthState(auth);
   console.log(user)
@@ -11,6 +12,7 @@ const Navbar = () => {
   return (
     <div className={style.nav}>
         <h1 className={style.heading}>Chat App</h1>
+        <Login/>
     </div>
   )
 }
