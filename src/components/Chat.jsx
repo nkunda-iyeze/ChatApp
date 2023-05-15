@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import Message from "./Message"
 import {collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
+import SendMessage from "./SendMessage";
 
 const style = {
     main:'flex flex-col p-[10px] relative',
@@ -27,6 +28,7 @@ const Chat = () => {
     {messages && messages.map((message)=>(<Message key={message.id} message= {message}/>))} 
     </main>
     {/* Send Message Component */}
+    <SendMessage/>
     <span ref={scroll}></span>
     </>
   )
