@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import SendMessage from "./SendMessage";
 
 const style = {
-    main:'flex flex-col p-[10px] relative',
+    main:'flex flex-col p-[10px] relative h-screen mb-8',
 }
 const Chat = () => {
   const [messages, setMessages] = useState();
@@ -28,7 +28,7 @@ const Chat = () => {
     {messages && messages.map((message)=>(<Message key={message.id} message= {message}/>))} 
     </main>
     {/* Send Message Component */}
-    <SendMessage/>
+    <SendMessage scroll={scroll}/>
     <span ref={scroll}></span>
     </>
   )
